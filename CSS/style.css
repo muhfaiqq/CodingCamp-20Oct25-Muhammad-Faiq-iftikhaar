@@ -1,0 +1,76 @@
+/* Menghilangkan margin & padding default dari browser */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    /* Memberi sedikit background agar header terlihat jelas */
+    background-color: #f4f4f4; 
+}
+
+/* 1. Pengaturan Header Utama */
+header {
+    display: flex; /* Membuat logo dan nav sejajar horizontal */
+    justify-content: space-between; /* Mendorong logo ke kiri dan nav ke kanan */
+    align-items: center; /* Menengahkan logo dan nav secara vertikal */
+    
+    padding: 10px 20px; /* Jarak di dalam header (atas/bawah 10px, kiri/kanan 20px) */
+    background-color: #ffffff; /* Background header putih */
+    
+    /* Garis abu-abu di atas dan bawah */
+    border-top: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+}
+
+/* 2. Pengaturan Logo */
+.logo {
+    width: 50px;
+    height: 50px;
+    background-color: #ffd700; /* Warna kuning (sesuaikan dengan logo Anda) */
+    border-radius: 50%; /* Ini yang membuatnya menjadi lingkaran */
+    
+    /* CATATAN: 
+      Baris di atas adalah placeholder. 
+      Jika Anda menggunakan tag <img>, hapus baris di atas dan gunakan ini:
+    */
+    /*
+    .logo img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%; // Jika gambar logo Anda kotak dan ingin dibuat bulat
+    }
+    */
+}
+
+/* 3. Pengaturan Navigasi */
+.navigation ul {
+    margin: 0;
+    padding: 0;
+    list-style: none; /* Menghilangkan tanda bullet (titik) */
+    display: flex; /* Membuat item menu (li) sejajar horizontal */
+}
+
+.navigation a {
+    display: block; /* Membuat link mengisi ruang di dalam <li> */
+    padding: 10px 15px; /* Jarak di dalam setiap tombol menu */
+    text-decoration: none; /* Menghilangkan garis bawah link */
+    color: #333; /* Warna teks */
+    font-size: 16px;
+    
+    /* Ini yang membuat kotak-kotak border */
+    border: 1px solid #ccc;
+}
+
+/* 4. Trik Agar Border Menyatu */
+/* Ini adalah bagian penting untuk membuat border antar tombol terlihat 
+  seperti satu garis (tidak dobel).
+  
+  Kita "menumpuk" border kiri dari tombol berikutnya
+  di atas border kanan dari tombol sebelumnya.
+*/
+.navigation li + li a {
+    margin-left: -1px; 
+}
+
+/* Efek tambahan saat mouse diarahkan ke tombol (opsional) */
+.navigation a:hover {
+    background-color: #f0f0f0;
+}
